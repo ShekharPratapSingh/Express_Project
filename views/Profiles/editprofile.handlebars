@@ -1,0 +1,47 @@
+<div>
+    {{#each errors}}
+    <div class="text-danger">{{text}}</div>
+    {{else}}
+    {{/each}}
+</div>
+{{!-- #each is used for looping purpose in handlebars --}}
+
+
+
+{{!-- here we overriding the post property and making it as a put for updating purpose --}}
+<div class="container addprofileblock">
+    <h1 class="text-success font-weight-bold ">EDIT PROFILE</h1>
+    <form  action="/Profiles/editprofile/{{profile.id}}/?_method=PUT" method="post" enctype="multipart/form-data">
+    
+    <input type="hidden" name="_method" value="PUT">
+
+
+
+    <div class="form-group">
+    <label for="Firstname">Upload Photos</label>
+    <input type="file" value="{{profile.photo.0.path}}" name="photo" class="form-control" id="photo" placeholder="photo" >
+  </div>
+  <div class="form-group">
+    <label for="Firstname">First Name</label>
+    <input type="text" value="{{profile.firstname}}" name="firstname" class="form-control" id="Firstname" placeholder="Firstname" >
+  </div>
+  <div class="form-group">
+    <label for="Lastname">Last Name</label>
+    <input type="text" value="{{profile.lastname}}" name="lastname" class="form-control" id="Lastname" placeholder="Lastname"  >
+  </div>
+  
+  <div class="form-group">
+    <label for="Email">Email address</label>
+    <input type="email"  value="{{profile.email}}"name="email" class="form-control" id="Email" placeholder="Email" >
+  </div>
+   <div class="form-group">
+    <label for="PhoneNumber">Phone Number</label>
+    <input type="number"  value="{{profile.phonenumber}}" name="phonenumber" class="form-control" id="PhoneNumber" placeholder="PhoneNumber">
+  </div>
+  <button class="btn btn-outline-success btn-block">update</button>
+
+ 
+  
+ 
+</form>
+</div>

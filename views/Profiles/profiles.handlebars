@@ -1,0 +1,34 @@
+
+<div class="container mt-4">
+    {{#each profile}}
+<div class="card mb-2" style="width: 18rem;">
+  <img src="{{ trimArray photo.0.path}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">
+      <span class="text-success">{{firstname}}</span>
+       <span class="text-success">{{lastname}}</span>  
+
+        </h5>
+    <p class="card-text text-danger">{{email}}</p>
+    <p class="card-text badge badge-danger"> {{formatRelative date postDate}}</p>
+ <div>
+<a href="/Profiles/editprofile/{{id}}" class="btn btn-primary">Edit Profile</a>
+
+{{!-- Delete files--}}
+  <form action="/Profiles/deleteprofile/{{id}}?_method=DELETE" method="post" class="mt-2 form-group">
+  <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" class=" form-control btn btn-danger" value="delete">
+  </form>
+
+ </div>
+  
+  </div>
+</div>
+{{else}}
+<h1>No Profile Found</h1>
+{{/each}}
+
+</div>
+
+
+

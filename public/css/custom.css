@@ -1,0 +1,17 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background: #eeeeee;
+}
+.addprofileblock{
+    border: 1px solid black;
+    margin: 30px auto;
+    padding: 10px;
+    background: #ffffff;
+}
+.card{
+    width: 18rem;
+    /* margin: -7%; */
+    float: left;
+    margin-right: 31px;
+}
